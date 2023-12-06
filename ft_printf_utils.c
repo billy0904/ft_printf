@@ -9,3 +9,37 @@
 /*   Updated: 2023/12/02 20:47:06 by gablee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "ft_printf.h"
+
+ssize_t print_c(va_list **n)
+{
+}
+
+ssize_t print_s(va_list **n)
+{
+}
+
+ssize_t print_p(va_list **n)
+{
+}
+
+ssize_t print_d(va_list **n)
+{
+}
+
+ssize_t print_i(va_list **n)
+{
+}
+
+ssize_t print_u(va_list **n)
+{
+}
+
+ssize_t print_x(va_list **n)
+{
+}
+
+ssize_t print_ux(va_list **n)
+{
+}
