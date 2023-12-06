@@ -10,3 +10,29 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+int	format_check(char c, int *i)
+{
+	if (c == 'c')
+		return (0);
+	else if (c == 's')
+		return (0);
+	else if (c == 'p')
+		return (0);
+	else if (c == 'd')
+		return (0);
+	else if (c == 'i')
+		return (0);
+	else if (c == 'u')
+		return (0);
+	else if (c == 'x')
+		return (0);
+	else if (c == 'X')
+		return (0);
+	else if (c == '%')
+		return (0);
+	return (0);
+}
+
+int	ft_printf(const char *format, ...)
+{
+}
