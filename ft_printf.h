@@ -14,6 +14,7 @@
 #define FT_PRINTF_H
 
 #include <unistd.h>
+#include <stdarg.h>
 
 int format_check(char c, int *i);
 ssize_t print_c(va_list **n);
