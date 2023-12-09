@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_printf_utils2.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gablee <gablee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/04 15:56:22 by gablee            #+#    #+#             */
-/*   Updated: 2023/12/04 15:56:26 by gablee           ###   ########.fr       */
+/*   Created: 2023/12/09 13:53:37 by gablee            #+#    #+#             */
+/*   Updated: 2023/12/09 13:53:41 by gablee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <unistd.h>
-# include <stdarg.h>
+ssize_t	print_u(va_list **n)
+{
+}
 
-int		format_check(char c, int *i);
-ssize_t	print_c(va_list **n);
-ssize_t	print_s(va_list **n);
-ssize_t	print_p(va_list **n);
-ssize_t	print_d(va_list **n);
-ssize_t	print_i(va_list **n);
-ssize_t	print_x(va_list **n);
-ssize_t	print_ux(va_list **n);
-int		ft_printf(const char *format, ...);
+ssize_t	print_x(va_list **n)
+{
+}
 
-#endif
+ssize_t	print_ux(va_list **n)
+{
+}
