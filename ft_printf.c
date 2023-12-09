@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_printf.h"
+
 int	format_check(char c, int *i)
 {
 	if (c == 'c')
@@ -35,4 +37,5 @@ int	format_check(char c, int *i)
 
 int	ft_printf(const char *format, ...)
 {
+	va_list	v;
 }
