@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-int	format_check(char c, int *i)
+int format_check(char c, int *i)
 {
 	if (c == 'c')
 		return (0);
@@ -35,7 +35,17 @@ int	format_check(char c, int *i)
 	return (0);
 }
 
-int	ft_printf(const char *format, ...)
+int ft_printf(const char *format, ...)
 {
-	va_list	v;
+	va_list v;
+	int i;
+	int n;
+	int error;
+
+	va_start(v, format);
+	while (format[i])
+	{
+	}
+	va_end(v);
+	return (n);
 }
