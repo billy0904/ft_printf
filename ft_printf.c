@@ -45,6 +45,15 @@ int ft_printf(const char *format, ...)
 	va_start(v, format);
 	while (format[i])
 	{
+		if (format[i] == '%')
+		{
+			i++;
+			if (!format[i])
+				break;
+			len += format_check(format[i], *i);
+		}
+		else if (error == -1)
+			return (-1);
 	}
 	va_end(v);
 	return (n);
