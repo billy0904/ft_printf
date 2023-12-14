@@ -50,7 +50,7 @@ int ft_printf(const char *format, ...)
 			i++;
 			if (!format[i])
 				break;
-			len += format_check(format[i], *i);
+			n += format_check(format[i], *i);
 		}
 		else if (error == -1)
 			return (-1);
