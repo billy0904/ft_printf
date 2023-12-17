@@ -23,3 +23,7 @@ ssize_t	print_x(va_list **n)
 ssize_t	print_ux(va_list **n)
 {
 }
+
+ssize_t	print_pc(va_list **n)
+{
+}

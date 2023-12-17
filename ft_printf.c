@@ -12,37 +12,37 @@
 
 #include "ft_printf.h"
 
-int	format_check(char c, int *i)
+int	format_check(char c, va_list ap, int *i)
 {
 	if (c == 'c')
-		return (0);
+		return (print_c((char)va_arg(ap, int));
 	else if (c == 's')
-		return (0);
+		return (print_s((char)va_arg(ap, int));
 	else if (c == 'p')
-		return (0);
+		return (print_p((char)va_arg(ap, int));
 	else if (c == 'd')
-		return (0);
+		return (print_d((char)va_arg(ap, int));
 	else if (c == 'i')
-		return (0);
+		return (print_i((char)va_arg(ap, int));
 	else if (c == 'u')
-		return (0);
+		return (print_u((char)va_arg(ap, int));
 	else if (c == 'x')
-		return (0);
+		return (print_x((char)va_arg(ap, int));
 	else if (c == 'X')
-		return (0);
+		return (print_ux((char)va_arg(ap, int));
 	else if (c == '%')
-		return (0);
+		return (print_pc((char)va_arg(ap, int));
 	return (0);
 }
 
 int	ft_printf(const char *format, ...)
 {
-	va_list	v;
+	va_list	ap;
 	int		i;
 	int		n;
 	int		error;
 
-	va_start(v, format);
+	va_start(ap, format);
 	while (format[i])
 	{
 		if (format[i] == '%')
@@ -50,11 +50,11 @@ int	ft_printf(const char *format, ...)
 			i++;
 			if (!format[i])
 				break ;
-			n += format_check(format[i], i);
+			n += format_check(format[i], ap, &i);
 		}
 		else if (error == -1)
 			return (-1);
 	}
-	va_end(v);
+	va_end(ap);
 	return (n);
 }
