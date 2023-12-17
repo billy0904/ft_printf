@@ -12,18 +12,18 @@
 
 #include "ft_printf.h"
 
-ssize_t	print_u(va_list **n)
+ssize_t	print_u(char u)
 {
 }
 
-ssize_t	print_x(va_list **n)
+ssize_t	print_x(char x)
 {
 }
 
-ssize_t	print_ux(va_list **n)
+ssize_t	print_ux(char ux)
 {
 }
 
-ssize_t	print_pc(va_list **n)
+ssize_t	print_pc(char pc)
 {
 }

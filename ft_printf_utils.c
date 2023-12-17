@@ -12,22 +12,22 @@
 
 #include "ft_printf.h"
 
-ssize_t	print_c(va_list **n)
+ssize_t	print_c(char c)
 {
 }
 
-ssize_t	print_s(va_list **n)
+ssize_t	print_s(char s)
 {
 }
 
-ssize_t	print_p(va_list **n)
+ssize_t	print_p(char p)
 {
 }
 
-ssize_t	print_d(va_list **n)
+ssize_t	print_d(char d)
 {
 }
 
-ssize_t	print_i(va_list **n)
+ssize_t	print_i(char i)
 {
 }
