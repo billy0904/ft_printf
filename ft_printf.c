@@ -15,23 +15,23 @@
 int	format_check(char c, va_list ap, int *i)
 {
 	if (c == 'c')
-		return (print_c((char)va_arg(ap, int));
+		return (print_c((char)va_arg(ap, int), i));
 	else if (c == 's')
-		return (print_s((char)va_arg(ap, int));
+		return (print_s((char)va_arg(ap, int),i));
 	else if (c == 'p')
-		return (print_p((char)va_arg(ap, int));
+		return (print_p((char)va_arg(ap, int)));
 	else if (c == 'd')
-		return (print_d((char)va_arg(ap, int));
+		return (print_d((char)va_arg(ap, int)));
 	else if (c == 'i')
-		return (print_i((char)va_arg(ap, int));
+		return (print_i((char)va_arg(ap, int)));
 	else if (c == 'u')
-		return (print_u((char)va_arg(ap, int));
+		return (print_u((char)va_arg(ap, int)));
 	else if (c == 'x')
-		return (print_x((char)va_arg(ap, int));
+		return (print_x((char)va_arg(ap, int)));
 	else if (c == 'X')
-		return (print_ux((char)va_arg(ap, int));
+		return (print_ux((char)va_arg(ap, int)));
 	else if (c == '%')
-		return (print_pc((char)va_arg(ap, int));
+		return (print_pc((char)va_arg(ap, int)));
 	return (0);
 }
 
@@ -40,7 +40,11 @@ int	ft_printf(const char *format, ...)
 	va_list	ap;
 	int		i;
 	int		n;
-	int		error;
+	int		err;
+
+	i = 0;
+	n = 0;
+	err = 0;
 
 	va_start(ap, format);
 	while (format[i])
@@ -52,7 +56,7 @@ int	ft_printf(const char *format, ...)
 				break ;
 			n += format_check(format[i], ap, &i);
 		}
-		else if (error == -1)
+		else if (err == -1)
 			return (-1);
 	}
 	va_end(ap);

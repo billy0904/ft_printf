@@ -12,22 +12,22 @@
 
 #include "ft_printf.h"
 
-ssize_t	print_c(char c)
+ssize_t	print_c(char c, int *i)
 {
 }
 
-ssize_t	print_s(char s)
+ssize_t	print_s(char s, int *i)
 {
 }
 
-ssize_t	print_p(char p)
+ssize_t	print_p(char p, int *i)
 {
 }
 
-ssize_t	print_d(char d)
+ssize_t	print_d(char d, int *i)
 {
 }
 
-ssize_t	print_i(char i)
+ssize_t	print_i(char i, int *i)
 {
 }

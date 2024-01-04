@@ -12,18 +12,18 @@
 
 #include "ft_printf.h"
 
-ssize_t	print_u(char u)
+ssize_t	print_u(char u, int *i)
 {
 }
 
-ssize_t	print_x(char x)
+ssize_t	print_x(char x, int *i)
 {
 }
 
-ssize_t	print_ux(char ux)
+ssize_t	print_ux(char ux, int *i)
 {
 }
 
-ssize_t	print_pc(char pc)
+ssize_t	print_pc(char pc, int *i)
 {
 }
