@@ -12,8 +12,11 @@
 
 #include "ft_printf.h"
 
-ssize_t	print_c(char c, int *i)
+ssize_t	print_c(char c, int *e)
 {
+	if (write(1, &c, 1) < 0)
+		*e = -1;
+	return (1);
 }
 
 ssize_t	print_s(char *s, int *e);
