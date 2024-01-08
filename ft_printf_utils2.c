@@ -16,11 +16,11 @@ ssize_t	print_u(char u, int *i)
 {
 }
 
-ssize_t	print_x(char x, int *i)
+ssize_t	print_x(int n, int *e);
 {
 }
 
-ssize_t	print_ux(char ux, int *i)
+ssize_t	print_ux(int n, int *e);
 {
 }
 

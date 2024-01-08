@@ -17,7 +17,7 @@ int	format_check(char c, va_list ap, int *i)
 	if (c == 'c')
 		return (print_c((char)va_arg(ap, int), i));
 	else if (c == 's')
-		return (print_s((char)va_arg(ap, int),i));
+		return (print_s((char)va_arg(ap, int), i));
 	else if (c == 'p')
 		return (print_p((char)va_arg(ap, int)));
 	else if (c == 'd')

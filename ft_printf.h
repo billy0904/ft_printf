@@ -17,13 +17,13 @@
 # include <stdarg.h>
 
 int		format_check(char c, va_list ap, int *i);
-ssize_t	print_c(va_list **n);
-ssize_t	print_s(va_list **n);
-ssize_t	print_p(va_list **n);
-ssize_t	print_d(va_list **n);
-ssize_t	print_i(va_list **n);
-ssize_t	print_x(va_list **n);
-ssize_t	print_ux(va_list **n);
+ssize_t	print_c(char c, int *e);
+ssize_t	print_s(char *s, int *e);
+ssize_t	print_p(size_t n, int *e);
+ssize_t	print_d(int d, int *e);
+ssize_t	print_i(int i, int *e);
+ssize_t	print_x(int n, int *e);
+ssize_t	print_ux(int n, int *e);
 int		ft_printf(const char *format, ...);
 
 #endif

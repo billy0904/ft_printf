@@ -16,18 +16,18 @@ ssize_t	print_c(char c, int *i)
 {
 }
 
-ssize_t	print_s(char s, int *i)
+ssize_t	print_s(char *s, int *e);
 {
 }
 
-ssize_t	print_p(char p, int *i)
+ssize_t	print_p(size_t n, int *e);
 {
 }
 
-ssize_t	print_d(char d, int *i)
+ssize_t	print_d(int d, int *e);
 {
 }
 
-ssize_t	print_i(char i, int *i)
+ssize_t	print_i(int i, int *e);
 {
 }
