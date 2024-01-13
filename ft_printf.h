@@ -25,5 +25,6 @@ ssize_t	print_i(int i, int *e);
 ssize_t	print_x(int n, int *e);
 ssize_t	print_ux(int n, int *e);
 int		ft_printf(const char *format, ...);
+void	ft_putnbr(int nb)
 
 #endif
