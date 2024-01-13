@@ -16,15 +16,16 @@
 # include <unistd.h>
 # include <stdarg.h>
 
-int		format_check(char c, va_list ap, int *i);
-ssize_t	print_c(char c, int *e);
-ssize_t	print_s(char *s, int *e);
-ssize_t	print_p(size_t n, int *e);
-ssize_t	print_d(int d, int *e);
-ssize_t	print_i(int i, int *e);
-ssize_t	print_x(int n, int *e);
-ssize_t	print_ux(int n, int *e);
+int		format_check(char c, va_list *ap);
+ssize_t	print_c(char c);
+ssize_t	print_s(char *s);
+ssize_t	print_p(size_t n);
+ssize_t	print_d(int d);
+ssize_t	print_i(int i);
+ssize_t	print_x(int n);
+ssize_t	print_ux(int n, char c);
 int		ft_printf(const char *format, ...);
-void	ft_putnbr(int nb)
+
+void	ft_putnbr(int nb);
 
 #endif
