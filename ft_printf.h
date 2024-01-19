@@ -17,8 +17,8 @@
 # include <stdarg.h>
 
 int		format_check(char c, va_list *ap);
-ssize_t	print_c(char c);
-ssize_t	print_s(char *s);
+ssize_t	print_c(char c, int *e);
+ssize_t	print_s(char *s, int *e);
 ssize_t	print_p(size_t n);
 ssize_t	print_d(int d);
 ssize_t	print_i(int i);

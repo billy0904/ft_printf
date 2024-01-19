@@ -19,18 +19,35 @@ ssize_t	print_c(char c, int *e)
 	return (1);
 }
 
-ssize_t	print_s(char *s);
+ssize_t	print_s(char *s, int *e)
+{
+	ssize_t	i;
+
+	i = 0;
+	if (!s)
+	{
+		if (write(1, "(null)", 6) < 0)
+			*e = -1;
+		return (6);
+	}
+	while (s[i])
+	{
+		print_c(s[i], e);
+		if (*e == -1)
+			return (-1);
+		i++;
+	}
+	return (i);
+}
+
+ssize_t	print_p(size_t n)
 {
 }
 
-ssize_t	print_p(size_t n);
+ssize_t	print_d(int d)
 {
 }
 
-ssize_t	print_d(int d);
-{
-}
-
-ssize_t	print_i(int i);
+ssize_t	print_i(int i)
 {
 }
