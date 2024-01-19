@@ -1,41 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_utils.c                                  :+:      :+:    :+:   */
+/*   ft_printf_utils3.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gablee <gablee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/02 20:47:04 by gablee            #+#    #+#             */
-/*   Updated: 2023/12/02 20:47:06 by gablee           ###   ########.fr       */
+/*   Created: 2024/01/19 19:08:56 by gablee            #+#    #+#             */
+/*   Updated: 2024/01/19 19:08:58 by gablee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-ssize_t	print_c(char c, int *e)
+ssize_t	print_p(size_t n)
 {
-	if (write(1, &c, 1) < 0)
-		*e = -1;
-	return (1);
 }
 
-ssize_t	print_s(char *s, int *e)
+void	ft_putnbr(int nb)
 {
-	ssize_t	i;
+	char	c;
 
-	i = 0;
-	if (!s)
+	if (nb == -2147483648)
+		write (1, "-2147483648", 11);
+	else if (nb < 0)
 	{
-		if (write(1, "(null)", 6) < 0)
-			*e = -1;
-		return (6);
+		nb = nb * -1;
+		write (1, "-", 1);
+		ft_putnbr (nb);
 	}
-	while (s[i])
+	else if (nb < 10)
 	{
-		print_c(s[i], e);
-		if (*e == -1)
-			return (-1);
-		i++;
+		c = nb + '0';
+		write (1, &c, 1);
 	}
-	return (i);
+	else
+	{
+		ft_putnbr (nb / 10);
+		ft_putnbr (nb % 10);
+	}
+}
+
+ssize_t	print_d(int d, int *e)
+{
+	long long	value;
+	long long	tmp;
+}
+
+ssize_t	print_i(int i)
+{
 }

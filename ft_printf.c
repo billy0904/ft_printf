@@ -12,51 +12,27 @@
 
 #include "ft_printf.h"
 
-int	format_check(char c, va_list *ap)
+int	format_check(char c, va_list *ap, int *e)
 {
 	if (c == 'c')
-		return (print_c(va_arg(*ap, int)));
+		return (print_c(va_arg(*ap, int), e));
 	else if (c == 's')
-		return (print_s(va_arg(*ap, char *)));
+		return (print_s(va_arg(*ap, char *), e));
 	else if (c == 'p')
-		return (print_p(va_arg(*ap, void *)));
+		return (print_p(va_arg(*ap, void *), e));
 	else if (c == 'd')
-		return (print_d(va_arg(*ap, int)));
+		return (print_d(va_arg(*ap, int), e));
 	else if (c == 'i')
-		return (print_i(va_arg(*ap, int)));
+		return (print_i(va_arg(*ap, int), e));
 	else if (c == 'u')
-		return (print_u(va_arg(*ap, unsigned int)));
+		return (print_u(va_arg(*ap, unsigned int), e));
 	else if (c == 'x')
-		return (print_x(va_arg(*ap, unsigned int)));
+		return (print_x(va_arg(*ap, unsigned int), e));
 	else if (c == 'X')
 		return (print_ux(va_arg(*ap, unsigned int), c));
 	else if (c == '%')
 		return (print_pc(va_arg(*ap, char), c));
 	return (0);
-}
-
-void	ft_putnbr(int nb)
-{
-	char	c;
-
-	if (nb == -2147483648)
-		write (1, "-2147483648", 11);
-	else if (nb < 0)
-	{
-		nb = nb * -1;
-		write (1, "-", 1);
-		ft_putnbr (nb);
-	}
-	else if (nb < 10)
-	{
-		c = nb + '0';
-		write (1, &c, 1);
-	}
-	else
-	{
-		ft_putnbr (nb / 10);
-		ft_putnbr (nb % 10);
-	}
 }
 
 int	ft_printf(const char *format, ...)
