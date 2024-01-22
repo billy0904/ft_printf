@@ -16,7 +16,7 @@
 # include <unistd.h>
 # include <stdarg.h>
 
-int		format_check(char c, va_list *ap);
+int		format_check(char c, va_list *ap, int e);
 ssize_t	print_c(char c, int *e);
 ssize_t	print_s(char *s, int *e);
 ssize_t	print_p(size_t n);

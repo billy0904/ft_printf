@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-int	format_check(char c, va_list *ap, int *e)
+int	format_check(char c, va_list *ap, int e)
 {
 	if (c == 'c')
 		return (print_c(va_arg(*ap, int), e));
