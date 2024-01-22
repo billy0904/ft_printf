@@ -14,6 +14,22 @@
 
 ssize_t	print_u(char u, int *i)
 {
+	unsigned int	n;
+	unsigned int	a;
+	int				len;
+
+	n = (unsigned int) u;
+	a = n;
+	len = 0;
+	if (a == 0)
+		len = 1;
+	while (a != 0)
+	{
+		a /= 10;
+		len++;
+	}
+	ft_putnbr(n);
+	return (len);
 }
 
 ssize_t	print_x(int n)
