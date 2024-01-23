@@ -34,10 +34,26 @@ ssize_t	print_u(char u, int *i)
 
 ssize_t	print_x(int n)
 {
+	char	*base;
+	int		len;
+
+	base = "0123456789abcdef";
+	len = 0;
+	ft_putnbr((unsigned int)n);
+	len = ft_strlen((unsigned int)n);
+	return (len);
 }
 
 ssize_t	print_ux(int n, char c)
 {
+	char	*base;
+	int		len;
+
+	base = "0123456789ABCDEF";
+	len = 0;
+	ft_putnbr((unsigned int)n);
+	len = ft_strlen((unsigned int)n);
+	return (len);
 }
 
 ssize_t	print_pc(char pc)
