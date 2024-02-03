@@ -55,7 +55,3 @@ ssize_t	print_ux(int n, char c)
 	len = ft_strlen((unsigned int)n);
 	return (len);
 }
-
-ssize_t	print_pc(char pc)
-{
-}

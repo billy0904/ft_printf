@@ -12,26 +12,24 @@
 
 #include "ft_printf.h"
 
-int	format_check(char c, va_list *ap, int e)
+int	format_check(char c, va_list ap)
 {
 	if (c == 'c')
-		return (print_c(va_arg(*ap, int), e));
+		return (print_c(va_arg(ap, int)));
 	else if (c == 's')
-		return (print_s(va_arg(*ap, char *), e));
+		return (print_s(va_arg(ap, char *)));
 	else if (c == 'p')
-		return (print_p(va_arg(*ap, void *), e));
-	else if (c == 'd')
-		return (print_d(va_arg(*ap, int), e));
-	else if (c == 'i')
-		return (print_i(va_arg(*ap, int), e));
+		return (print_p(va_arg(ap, unsigned long long))); //unsigned long long
+	else if (c == 'd' || c == 'i')
+		return (print_d(va_arg(ap, int)));
 	else if (c == 'u')
-		return (print_u(va_arg(*ap, unsigned int), e));
+		return (print_u(va_arg(ap, unsigned int)));
 	else if (c == 'x')
-		return (print_x(va_arg(*ap, unsigned int), e));
+		return (print_x(va_arg(ap, unsigned int)));
 	else if (c == 'X')
-		return (print_ux(va_arg(*ap, unsigned int), c));
+		return (print_ux(va_arg(ap, unsigned int)));
 	else if (c == '%')
-		return (print_pc(va_arg(*ap, char), c));
+		return (print_c('%'));
 	return (0);
 }
 
