@@ -47,9 +47,12 @@ int	ft_printf(const char *format, ...)
 	while (format[i])
 	{
 		if (format[i] == '%')
-			n = format_check(format[++i], ap, &err);
-		else if (format[i])
-			n = print_c(format[i], &err);
+		{
+			i++;
+			n += format_check(format[i], ap, &err);
+		}
+		else
+			n += print_c(format[i], &err);
 		i++;
 		if (err == -1)
 			return (-1);

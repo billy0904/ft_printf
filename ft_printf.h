@@ -25,8 +25,5 @@ int			print_di(int d, int *err);
 int			print_u(char u, int *err);
 int			print_x(unsigned int n, int *err);
 int			print_ux(unsigned int n, int *err);
-void		putnbr_hex(unsigned long long n, char *base, int *err);
-static void	putnbr_dec(long n, int *err);
-int			howlong(unsigned long long n);
 
 #endif
