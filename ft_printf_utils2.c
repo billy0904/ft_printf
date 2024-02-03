@@ -12,46 +12,65 @@
 
 #include "ft_printf.h"
 
-ssize_t	print_u(char u, int *i)
+int	howlong(unsigned long long n)
 {
-	unsigned int	n;
-	unsigned int	a;
-	int				len;
+	int	i;
 
-	n = (unsigned int) u;
-	a = n;
-	len = 0;
-	if (a == 0)
-		len = 1;
-	while (a != 0)
+	i = 1;
+	while (n >= 16)
 	{
-		a /= 10;
-		len++;
+		n /= 16;
+		i++;
 	}
-	ft_putnbr(n);
+	return (i);
+}
+
+void	putnbr_hex(unsigned long long n, char *base, int *err)
+{
+	if (n >= 16)
+		putnbr_hex((n / 16), base, err);
+	if (*err == -1)
+		return ;
+	print_c(base[n % 16], err);
+}
+
+int	print_p(unsigned long long n, int *err)
+{
+	int		len;
+	char	*base;
+
+	len = 0;
+	base = "0123456789abcdef";
+	if (n == 0)
+		return (print_s("0x0", err));
+	print_s("0x", err);
+	if (*err == -1)
+		return (-1);
+	putnbr_hex(n, base, err);
+	len = howlong(n) + 2;
 	return (len);
 }
 
-ssize_t	print_x(int n)
+int	print_x(unsigned int n, int *err)
 {
-	char	*base;
-	int		len;
+	char			*base;
+	unsigned int	len;
 
 	base = "0123456789abcdef";
 	len = 0;
-	ft_putnbr((unsigned int)n);
-	len = ft_strlen((unsigned int)n);
+	putnbr_hex((unsigned int)n, base, err);
+	len = howlong((unsigned int)n);
 	return (len);
 }
 
-ssize_t	print_ux(int n, char c)
+int	print_ux(unsigned int n, int *err)
 {
-	char	*base;
-	int		len;
+	char			*base;
+	unsigned int	len;
 
 	base = "0123456789ABCDEF";
 	len = 0;
-	ft_putnbr((unsigned int)n);
-	len = ft_strlen((unsigned int)n);
+	putnbr_hex((unsigned int)n, base, err);
+	len = howlong((unsigned int)n);
 	return (len);
 }

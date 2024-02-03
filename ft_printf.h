@@ -16,16 +16,17 @@
 # include <unistd.h>
 # include <stdarg.h>
 
-int		format_check(char c, va_list *ap, int e);
-ssize_t	print_c(char c, int *e);
-ssize_t	print_s(char *s, int *e);
-ssize_t	print_p(size_t n);
-ssize_t	print_d(int d);
-ssize_t	print_i(int i);
-ssize_t	print_x(int n);
-ssize_t	print_ux(int n, char c);
-int		ft_printf(const char *format, ...);
-
-void	ft_putnbr(int nb);
+int			format_check(char c, va_list ap, int *err);
+int			ft_printf(const char *format, ...);
+int			print_c(char c, int *err);
+int			print_s(char *s, int *err);
+int			print_p(unsigned long long n, int *err);
+int			print_di(int d, int *err);
+int			print_u(char u, int *err);
+int			print_x(unsigned int n, int *err);
+int			print_ux(unsigned int n, int *err);
+void		putnbr_hex(unsigned long long n, char *base, int *err);
+static void	putnbr_dec(long n, int *err);
+int			howlong(unsigned long long n);
 
 #endif
