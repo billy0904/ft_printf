@@ -73,7 +73,7 @@ int	print_di(int n, int *err)
 	return (len);
 }
 
-int	print_u(char u, int *err)
+int	print_u(int u, int *err)
 {
 	unsigned int	num;
 	unsigned int	tmp;
