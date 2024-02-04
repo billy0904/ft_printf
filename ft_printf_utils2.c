@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-int	howlong(unsigned long long n)
+static int	howlong(unsigned long long n)
 {
 	int	i;
 
@@ -25,7 +25,7 @@ int	howlong(unsigned long long n)
 	return (i);
 }
 
-void	putnbr_hex(unsigned long long n, char *base, int *err)
+static void	putnbr_hex(unsigned long long n, char *base, int *err)
 {
 	if (n >= 16)
 		putnbr_hex((n / 16), base, err);
