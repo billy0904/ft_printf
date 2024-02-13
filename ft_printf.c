@@ -46,16 +46,17 @@ int	ft_printf(const char *format, ...)
 	err = 0;
 	while (format[i])
 	{
+		if (err == -1)
+			return (-1);
 		if (format[i] == '%')
 		{
 			i++;
 			n += format_check(format[i], ap, &err);
+			continue ;
 		}
 		else
 			n += print_c(format[i], &err);
 		i++;
-		if (err == -1)
-			return (-1);
 	}
 	va_end(ap);
 	return (n);
